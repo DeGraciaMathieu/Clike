@@ -1,6 +1,11 @@
 <p align="center">
 <img src="https://i17.servimg.com/u/f17/11/13/61/32/clike10.png" width="270">
 </p>
+<p align="center">
+ <a href="https://scrutinizer-ci.com/g/degraciamathieu/clike/?branch=master"><img src="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://travis-ci.org/DeGraciaMathieu/Clike"><img src="https://travis-ci.org/DeGraciaMathieu/Clike.svg?branch=master" alt="Build Status"></a>
+<a href="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/?branch=master"><img src="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/badges/coverage.png?b=master" alt="Code Coverage"></a>
+</p>
 
 # DeGraciaMathieu/Clike
 
