@@ -28,7 +28,7 @@ class Interpreter {
      */
     protected static function transformLines(Contracts\Output $output) :array
     {
-        return array_map(function($line) use($datetime) {
+        return array_map(function($line) {
             return $line->read();
         }, $output->get());
     }
