@@ -4,58 +4,44 @@ namespace DeGraciaMathieu\Clike\Tests;
 
 use PHPUnit\Framework\TestCase;
 use DeGraciaMathieu\Clike\Lines;
+use DeGraciaMathieu\Clike\Contracts;
 
 class LinesTest extends TestCase {
     
     /** @test */
     public function info()
     {
-        $line = new Lines\Info('content');
-
-        $expectedArray = [
-            'type' => 'info',
-            'content' => 'content',
-        ];
-
-        $this->assertEquals($line->read(), $expectedArray);
+        $this->checkLine(Lines\Info::class, 'content', 'info');
     }
 
     /** @test */
     public function error()
     {
-        $line = new Lines\Error('content');
-
-        $expectedArray = [
-            'type' => 'error',
-            'content' => 'content',
-        ];
-
-        $this->assertEquals($line->read(), $expectedArray);
+        $this->checkLine(Lines\Error::class, 'content', 'error');
     }
 
     /** @test */
     public function success()
     {
-        $line = new Lines\Success('content');
-
-        $expectedArray = [
-            'type' => 'succes',
-            'content' => 'content',
-        ];
-
-        $this->assertEquals($line->read(), $expectedArray);
+        $this->checkLine(Lines\Success::class, 'content', 'success');
     }
 
     /** @test */
     public function warning()
     {
-        $line = new Lines\Warning('content');
+        $this->checkLine(Lines\Warning::class, 'content', 'warning');
+    }  
+
+    protected function checkLine($line, $content, $type)
+    {
+        $line = new $line($content);
 
         $expectedArray = [
-            'type' => 'warning',
-            'content' => 'content',
+            'type' => $type,
+            'content' => $content,
         ];
 
+        $this->isInstanceOf(Contracts\Line::class, $line);
         $this->assertEquals($line->read(), $expectedArray);
-    }        
+    }      
 }
