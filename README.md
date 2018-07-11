@@ -86,3 +86,14 @@ To finally execute the ```output``` method displaying the following result.
 //   ]
 // ]
 ```
+
+### Execute an command with Terminal
+
+```php
+use DeGraciaMathieu\Clike\Terminal;
+
+$terminal = new Terminal([
+    Clear::class,
+]);
+$terminal->execute('/clear');
+```
