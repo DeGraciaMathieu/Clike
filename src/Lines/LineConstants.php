@@ -6,6 +6,6 @@ abstract class LineConstants {
 
     const ERROR = 'error';
     const INFO = 'info';
-    const SUCCESS = 'succes';
+    const SUCCESS = 'success';
     const WARNING = 'warning';
 }
