@@ -22,7 +22,7 @@ class Clear implements Contracts\Command {
         return '/clear';
     }
 
-    public function process() :void
+    public function process()
     {
         // foo
     }
