@@ -45,7 +45,7 @@ class Command {
     }
 
     /**
-     * return response command
+     * return command response
      * @param  \DeGraciaMathieu\Clike\Contracts\Output $output
      * @return array
      */
