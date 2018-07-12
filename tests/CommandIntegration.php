@@ -6,7 +6,7 @@ use Mockery;
 use PHPUnit\Framework\TestCase;
 use DeGraciaMathieu\Clike\Command;
 
-class IntegrationTest extends TestCase {
+class CommandIntegration extends TestCase {
     
     /** @test */
     public function success()
@@ -27,7 +27,7 @@ class IntegrationTest extends TestCase {
     }
 
     /** @test */
-    public function authorized()
+    public function unauthorized()
     {
         $command = new Command();
 
@@ -44,7 +44,7 @@ class IntegrationTest extends TestCase {
             ]
         ];
 
-        $this->assertNotNull($result['timestamp']);        
+        $this->assertNotNull($result['timestamp']);
         $this->assertEquals($result['lines'], $expectedArray);  
-    }    
+    }         
 }
