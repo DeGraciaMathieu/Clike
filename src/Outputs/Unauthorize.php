@@ -1,6 +1,6 @@
 <?php
 
-namespace DeGraciaMathieu\Clike\Output;
+namespace DeGraciaMathieu\Clike\Outputs;
 
 use DeGraciaMathieu\Clike\Lines;
 use DeGraciaMathieu\Clike\Contracts;
@@ -34,7 +34,7 @@ class Unauthorize implements Contracts\Output {
      */
     protected function getErrorLine() :string
     {
-        $format = '%s has a unauthorize command.';
+        $format = '%s is an unauthorized command.';
 
         return sprintf($format, $this->command->binding());
     }
