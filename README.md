@@ -20,7 +20,7 @@ composer require degraciamathieu/clike
 
 ## Usage
 
-### Create an command
+### Create a command
 
 A command is a class that must implement the interface ```DeGraciaMathieu\Clike\Contracts\Command::class```.
 
@@ -81,7 +81,7 @@ class Clear implements Contracts\Command {
 }
 ```
 
-### Execute an command
+### Execute a command
 
 Now let's play with our Clear command.
 
@@ -108,7 +108,7 @@ To finally execute the ```output``` method displaying the following result.
 // ]
 ```
 
-### Execute an command with Terminal
+### Execute a command with Terminal
 
 ```php
 use DeGraciaMathieu\Clike\Terminal;
