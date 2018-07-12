@@ -1,9 +1,9 @@
 {
   "name": "degraciamathieu/clike",
-  "description": "",
+  "description": "This package allows you to run a class with a design pattern similar to a command system",
   "homepage": "https://github.com/degraciamathieu/clike",
   "license": "MIT",
-  "keywords": [""],
+  "keywords": ["laravel", "command system", "design pattern", "cli"],
   "authors": [
     {
       "name": "De Gracia Mathieu",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=7.0.0"
   },
   "require-dev": {
       "phpunit/phpunit": "5.7.*",
