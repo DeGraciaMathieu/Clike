@@ -5,6 +5,7 @@
  <a href="https://scrutinizer-ci.com/g/degraciamathieu/clike/?branch=master"><img src="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
 <a href="https://travis-ci.org/DeGraciaMathieu/Clike"><img src="https://travis-ci.org/DeGraciaMathieu/Clike.svg?branch=master" alt="Build Status"></a>
 <a href="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/?branch=master"><img src="https://scrutinizer-ci.com/g/DeGraciaMathieu/Clike/badges/coverage.png?b=master" alt="Code Coverage"></a>
+<img src="https://img.shields.io/travis/php-v/DeGraciaMathieu/Clike.svg" alt="PHP range"> 
 </p>
 
 # DeGraciaMathieu/Clike
@@ -31,26 +32,46 @@ use DeGraciaMathieu\Clike\Contracts;
 
 class Clear implements Contracts\Command {
 
+    /**
+     * Get the command description
+     * @return \DeGraciaMathieu\Clike\Contracts\Line
+     */
     public function description() :Contracts\Line
     {
         return new Lines\Description('Description...');
     }
 
+    /**
+     * Check if the command is executable
+     * @return boolean
+     */
     public function authorized() :bool
     {
         return true;
     }
 
+    /**
+     * Bind of this command
+     * @return string
+     */
     public function binding() :string
     {
         return '/clear';
     }
 
+    /**
+     * Code executed by this command
+     * @return void
+     */
     public function process() :void
     {
         // foo
     }
 
+    /**
+     * Output of this command
+     * @return \DeGraciaMathieu\Clike\Contracts\Line[]
+     */
     public function output() :array
     {
         return [
