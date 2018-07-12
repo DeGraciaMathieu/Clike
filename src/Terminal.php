@@ -37,7 +37,7 @@ class Terminal {
             return (new $availableCommand)->binding() === $binding;
         });
 
-        if (! $command[0]) {
+        if (! isset($command[0])) {
             throw new Exceptions\UnknowCommand();
         }
 
