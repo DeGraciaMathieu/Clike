@@ -29,7 +29,6 @@ class TerminalIntegration extends TestCase {
         $this->assertEquals($result['lines'], $expectedArray);  
     }    
 
-
     /** @test */
     public function unknow()
     {
