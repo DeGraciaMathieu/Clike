@@ -2,15 +2,14 @@
 
 namespace DeGraciaMathieu\Clike\Tests;
 
+use Mockery;
 use PHPUnit\Framework\TestCase;
-use DeGraciaMathieu\Clike\Lines;
 use DeGraciaMathieu\Clike\Command;
-use DeGraciaMathieu\Clike\Contracts;
 
 class IntegrationTest extends TestCase {
     
     /** @test */
-    public function info()
+    public function success()
     {
         $command = new Command();
 
@@ -23,7 +22,29 @@ class IntegrationTest extends TestCase {
             ]
         ];
 
+        $this->assertNotNull($result['timestamp']);        
         $this->assertEquals($result['lines'], $expectedArray);        
     }
 
+    /** @test */
+    public function authorized()
+    {
+        $command = new Command();
+
+        $clear = Mockery::mock(new Clear())->makePartial();
+
+        $clear->shouldReceive('authorized')->andReturn(false);        
+
+        $result = $command->execute($clear);
+
+        $expectedArray = [
+            [
+                'type' => 'error',
+                'content' => '/clear is an unauthorized command.',
+            ]
+        ];
+
+        $this->assertNotNull($result['timestamp']);        
+        $this->assertEquals($result['lines'], $expectedArray);  
+    }    
 }
