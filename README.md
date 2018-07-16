@@ -34,7 +34,6 @@ class Clear implements Contracts\Command {
 
     /**
      * Get the command description
-     * @return \DeGraciaMathieu\Clike\Contracts\Line
      */
     public function description() :Contracts\Line
     {
@@ -43,7 +42,6 @@ class Clear implements Contracts\Command {
 
     /**
      * Check if the command is executable
-     * @return boolean
      */
     public function authorized() :bool
     {
@@ -52,7 +50,6 @@ class Clear implements Contracts\Command {
 
     /**
      * Bind of this command
-     * @return string
      */
     public function binding() :string
     {
@@ -61,7 +58,6 @@ class Clear implements Contracts\Command {
 
     /**
      * Code executed by this command
-     * @return void
      */
     public function process() :void
     {
@@ -70,7 +66,6 @@ class Clear implements Contracts\Command {
 
     /**
      * Output of this command
-     * @return \DeGraciaMathieu\Clike\Contracts\Line[]
      */
     public function output() :array
     {
