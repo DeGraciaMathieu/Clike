@@ -9,7 +9,7 @@ class Clear implements Contracts\Command {
 
     public function description() :Contracts\Line
     {
-        return new Lines\Description('...');
+        return new Lines\Info('...');
     }
 
     public function authorized() :bool
