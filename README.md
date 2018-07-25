@@ -35,9 +35,9 @@ class Clear implements Contracts\Command {
     /**
      * Get the command description
      */
-    public function description() :Contracts\Line
+    public function description() :string
     {
-        return new Lines\Description('Description...');
+        return 'Command description...';
     }
 
     /**
@@ -61,7 +61,7 @@ class Clear implements Contracts\Command {
      */
     public function process() :void
     {
-        // foo
+        //
     }
 
     /**
@@ -112,4 +112,22 @@ $terminal = new Terminal([
     Clear::class,
 ]);
 $terminal->execute('/clear');
+```
+
+### Retrieve all available commands
+
+```php
+use DeGraciaMathieu\Clike\Terminal;
+
+$terminal = new Terminal([
+    Clear::class,
+]);
+$terminal->getAvailableCommands();
+
+// [
+//     [
+//       "binding" => "/clear"
+//       "description" => "Command description..."
+//     ]
+// ]
 ```
