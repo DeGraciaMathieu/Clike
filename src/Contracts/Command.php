@@ -6,9 +6,9 @@ interface Command {
 
     /**
      * Get the command description
-     * @return \DeGraciaMathieu\Clike\Contracts\Line
+     * @return string
      */	
-    public function description() :Line;
+    public function description() :string;
 
     /**
      * Check if the command is executable
