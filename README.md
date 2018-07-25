@@ -114,7 +114,7 @@ $terminal = new Terminal([
 $terminal->execute('/clear');
 ```
 
-### Retrieve all available commands
+### Retrieve all available commands with Terminal
 
 ```php
 use DeGraciaMathieu\Clike\Terminal;
