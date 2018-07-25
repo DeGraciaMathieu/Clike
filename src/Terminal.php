@@ -43,4 +43,22 @@ class Terminal {
 
         return new $command[0];
     }
+
+    /**
+     * Get all available commands
+     * @return array
+     */
+    public function getAvailableCommands()
+    {
+        return array_map(function($availableCommand){
+
+            $command = new $availableCommand;
+
+            return [
+                'binding' => $command->binding(),
+                'description' => $command->description(),
+            ];
+
+        }, $this->availableCommands);
+    }
 }
