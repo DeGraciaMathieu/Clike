@@ -12,9 +12,7 @@ class TerminalIntegration extends TestCase {
     /** @test */
     public function success()
     {
-        $terminal = new Terminal([
-            Clear::class,
-        ]);
+        $terminal = $this->makeTerminal();
 
         $result = $terminal->execute('/clear');
 
@@ -32,12 +30,39 @@ class TerminalIntegration extends TestCase {
     /** @test */
     public function unknow()
     {
-        $terminal = new Terminal([
-            Clear::class,
-        ]);
+        $terminal = $this->makeTerminal();
 
         $this->expectException(UnknowCommand::class);
         
         $terminal->execute('/unknow_command');
-    }            
+    } 
+
+    /** @test */
+    public function getAvailableCommands()
+    {
+        $terminal = $this->makeTerminal();
+
+        $availableCommands = $terminal->getAvailableCommands();
+
+        $expectedArray = [
+            [
+                'binding' => '/clear',
+                'description' => 'description',
+            ]
+        ];
+
+        $this->assertEquals($availableCommands, $expectedArray);  
+    }   
+
+    /**
+     * @return \DeGraciaMathieu\Clike\Terminal
+     */
+    protected function makeTerminal()
+    {
+        $terminal = new Terminal([
+            Clear::class,
+        ]);
+
+        return $terminal;
+    }             
 }

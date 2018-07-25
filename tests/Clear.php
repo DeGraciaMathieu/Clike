@@ -7,9 +7,9 @@ use DeGraciaMathieu\Clike\Contracts;
 
 class Clear implements Contracts\Command {
 
-    public function description() :Contracts\Line
+    public function description() :string
     {
-        return new Lines\Info('...');
+        return 'description';
     }
 
     public function authorized() :bool
@@ -24,7 +24,7 @@ class Clear implements Contracts\Command {
 
     public function process()
     {
-        // foo
+        //
     }
 
     public function output() :array
