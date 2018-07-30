@@ -14,12 +14,17 @@
     "php": ">=7.1.0"
   },
   "require-dev": {
-      "phpunit/phpunit": "5.7.*",
+      "phpunit/phpunit": "^6.5",
       "mockery/mockery": "^0.9.9"
   },
   "autoload": {
     "psr-4": {
       "DeGraciaMathieu\\Clike\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DeGraciaMathieu\\Clike\\Tests\\": "tests/"
     }
   }
 }
