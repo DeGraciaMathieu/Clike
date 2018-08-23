@@ -12,6 +12,8 @@
 
 # DeGraciaMathieu/Clike
 
+The command design pattern is useful to create modular components for a command line shell application that can be expanded with more functionality implemented later by separate modules.
+
 ## Installation
  
 Run in console below command to download package to your project:
