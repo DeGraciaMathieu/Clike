@@ -8,7 +8,7 @@ use DeGraciaMathieu\Clike\Contracts;
 use DeGraciaMathieu\Clike\Lines\LineConstants;
 
 class LinesTest extends TestCase {
-    
+
     const CONTENT = 'line content';
 
     /** @test */
@@ -33,7 +33,7 @@ class LinesTest extends TestCase {
     public function warning()
     {
         $this->checkLine(Lines\Warning::class, LineConstants::WARNING);
-    }  
+    }
 
     protected function checkLine($line, $type)
     {
@@ -45,6 +45,6 @@ class LinesTest extends TestCase {
         ];
 
         $this->isInstanceOf(Contracts\Line::class, $line);
-        $this->assertEquals($line->read(), $expectedArray);
-    }      
+        $this->assertEquals($expectedArray, $line->read());
+    }
 }

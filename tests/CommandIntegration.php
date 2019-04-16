@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 use DeGraciaMathieu\Clike\Command;
 
 class CommandIntegration extends TestCase {
-    
+
     /** @test */
     public function success()
     {
@@ -22,8 +22,8 @@ class CommandIntegration extends TestCase {
             ]
         ];
 
-        $this->assertNotNull($result['timestamp']);        
-        $this->assertEquals($result['lines'], $expectedArray);        
+        $this->assertNotNull($result['timestamp']);
+        $this->assertEquals($expectedArray, $result['lines']);
     }
 
     /** @test */
@@ -33,7 +33,7 @@ class CommandIntegration extends TestCase {
 
         $clear = Mockery::mock(new Clear())->makePartial();
 
-        $clear->shouldReceive('authorized')->andReturn(false);        
+        $clear->shouldReceive('authorized')->andReturn(false);
 
         $result = $command->execute($clear);
 
@@ -45,6 +45,6 @@ class CommandIntegration extends TestCase {
         ];
 
         $this->assertNotNull($result['timestamp']);
-        $this->assertEquals($result['lines'], $expectedArray);  
-    }         
+        $this->assertEquals($expectedArray, $result['lines']);
+    }
 }
