@@ -2,13 +2,12 @@
 
 namespace DeGraciaMathieu\Clike\Tests;
 
-use Mockery;
 use PHPUnit\Framework\TestCase;
 use DeGraciaMathieu\Clike\Terminal;
 use DeGraciaMathieu\Clike\Exceptions\UnknowCommand;
 
 class TerminalIntegration extends TestCase {
-    
+
     /** @test */
     public function success()
     {
@@ -23,9 +22,9 @@ class TerminalIntegration extends TestCase {
             ]
         ];
 
-        $this->assertNotNull($result['timestamp']);        
-        $this->assertEquals($result['lines'], $expectedArray);  
-    }    
+        $this->assertNotNull($result['timestamp']);
+        $this->assertEquals($expectedArray, $result['lines']);
+    }
 
     /** @test */
     public function unknow()
@@ -33,9 +32,10 @@ class TerminalIntegration extends TestCase {
         $terminal = $this->makeTerminal();
 
         $this->expectException(UnknowCommand::class);
-        
+        $this->expectExceptionMessage('');
+
         $terminal->execute('/unknow_command');
-    } 
+    }
 
     /** @test */
     public function getAvailableCommands()
@@ -51,8 +51,8 @@ class TerminalIntegration extends TestCase {
             ]
         ];
 
-        $this->assertEquals($availableCommands, $expectedArray);  
-    }   
+        $this->assertEquals($expectedArray, $availableCommands);
+    }
 
     /**
      * @return \DeGraciaMathieu\Clike\Terminal
@@ -64,5 +64,5 @@ class TerminalIntegration extends TestCase {
         ]);
 
         return $terminal;
-    }             
+    }
 }
